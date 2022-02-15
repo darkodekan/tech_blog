@@ -1,0 +1,78 @@
+{% extends "_layout.html" %}
+
+{% block featured %}
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+        {% if featured_posts.0 %}
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="mb-0">{{ featured_posts.0.title }}</h3>
+          <div class="mb-1 text-muted">{{ featured_posts.0.created_on }}</div>
+          <p class="card-text mb-auto">{{ featured_posts.0.snippet }}</p>
+          <a href="{%  url 'blog:post_detail' featured_posts.0.slug %}" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+            <img src="{{ featured_posts.1.thumbnail.url }}" width="200" height="250">
+
+        </div>
+      </div>
+        {% endif %}
+    </div>
+    <div class="col-md-6">
+                {% if featured_posts.1 %}
+
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="mb-0">{{ featured_posts.1.title }}</h3>
+          <div class="mb-1 text-muted">{{ featured_posts.1.created_on }}</div>
+          <p class="mb-auto">{{ featured_posts.1.snippet }}</p>
+          <a href="{%  url 'blog:post_detail' featured_posts.1.slug %}" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+            <img src="{{ featured_posts.1.thumbnail.url }}" width="200" height="250">
+
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  </div>
+{% endblock %}
+{% block body %}
+    <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        Other articles
+    </h3>
+    {% if featured_posts.2 %}
+
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="mb-0">{{ featured_posts.2.title }}</h3>
+          <div class="mb-1 text-muted">{{ featured_posts.2.created_on }}</div>
+          <p class="mb-auto">{{ featured_posts.2.snippet }}</p>
+          <a href="{%  url 'blog:post_detail' featured_posts.2.slug %}" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+            <img src="{{ featured_posts.2.thumbnail.url }}" width="200" height="250">
+
+        </div>
+      </div>
+    {%  endif %}
+
+    {% if featured_posts.3 %}
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="mb-0">{{ featured_posts.3.title }}</h3>
+          <div class="mb-1 text-muted">{{ featured_posts.3.created_on }}</div>
+          <p class="mb-auto">{{ featured_posts.3.snippet }}</p>
+          <a href="{%  url 'blog:post_detail' featured_posts.3.slug %}" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+            <img src="{{ featured_posts.3.thumbnail.url }}" width="200" height="250">
+
+        </div>
+      </div>
+    {% endif %}
+
+    <a class="btn btn-light" href="{%  url 'blog:post_list' %}">Search all articles...</a>
+
+{%  endblock %}
