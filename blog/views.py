@@ -8,21 +8,12 @@ from django.db.models import Q
 # Create your views here.
 
 
-class HomepageView(TemplateView):
-    template_name = "blog/home.html"
-
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
-        context['featured_posts'] = Post.objects.all().order_by('-id')[:4]
-        return context
-
-
 class Error404(TemplateView):
     template_name = "blog/404.html"
 
 
 class PostListView(ListView):
-    paginate_by = 10
+    paginate_by = 4
     model = Post
     context_object_name = "posts"
 

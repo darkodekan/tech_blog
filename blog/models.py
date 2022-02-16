@@ -17,6 +17,9 @@ class Post(models.Model):
     snippet = models.CharField(max_length=200, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        ordering = ['-id']
+
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
