@@ -163,9 +163,3 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 
 #CLOUDINARY_URL = env("CLOUDINARY_URL")
 #DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-"""
-CLOUDINARY_CLOUD_NAME=dc6g4wzlw
-CLOUDINARY_API_KEY=686929487916813
-CLOUDINARY_API_SECRET=q-J7cRXD_wHjG8vHERJe3n24HHQ
-?api_proxy=http://proxy.server:3128
-"""
