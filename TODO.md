@@ -15,6 +15,10 @@
 23. change path ?
 24. deploy on python anywhere
 25. comments issue zooming in
-27. mobile orientation change?
-28. default image thumbnail
-29. hide slug in admin?
+26. mobile orientation change?
+27. default image thumbnail
+28. hide slug in admin?
+29. title layout change 
+30. seo optimization
+31. deploy to heroku
+32. minimum height body

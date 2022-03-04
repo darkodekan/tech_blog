@@ -1,4 +1,5 @@
 {% extends "_layout.html" %}
+{% block title %}Blog{% endblock %}
 {% block content %}
     {% for post in posts %}
         <div class="col-lg-6">
@@ -9,10 +10,10 @@
                                   alt="..."/></a>
                 {% endif %}
                 <div class="card-body">
-                    <div class="small text-muted">{{ post.created_on }}</div>
+                    <div class="small text-muted"><i class="bi bi-calendar"></i> {{ post.created_on }}</div>
                     <h2 class="card-title h4">{{ post.title }}</h2>
                     <p class="card-text">{{ post.snippet }}</p>
-                    <a class="btn btn-dark" href="{% url 'blog:post_detail' post.slug %}">Read more →</a>
+                    <a class="btn btn-dark" href="{% url 'blog:post_detail' post.slug %}">Read more</a>
                 </div>
             </div>
             <!-- Blog post-->
@@ -45,11 +46,11 @@
 {% block widget %}
 
     <div class="card mb-4">
-        <div class="card-header">Search</div>
+        <div class="card-header">Search <i class="bi bi-search"></i></div>
         <div class="card-body">
             <form method="get" action="{% url 'blog:post_list' %}" class="form-inline">
                 {{ form.query }}
-                <button type="submit" class="btn btn-dark">Go!</button>
+                <button type="submit" class="btn btn-dark"><i class="bi bi-search"></i></button>
             </form>
         </div>
     </div>

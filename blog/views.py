@@ -33,11 +33,12 @@ class PostListView(ListView):
 class PostDetailView(DetailView):
     model = Post
 
-"""
+
 class PostCreateView(CreateView, LoginRequiredMixin):
     model = Post
+    fields = '__all__'
 
-
+"""
 class PostUpdateView(UpdateView, LoginRequiredMixin):
     model = Post
 
